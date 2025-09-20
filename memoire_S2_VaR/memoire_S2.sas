@@ -13,12 +13,14 @@ run;
 %mend Importation;
 
 /*Loading of our Excel sheets using the macro*/
-%Importation(datafile=C:\Users\aahmatsouley\OneDrive - Université Paris 1 Panthéon-Sorbonne\Documents\semestre 1\économétrie appliquée\memoire\cac40.xlsx, name=CAC40); /* We load CAC40 sheet */
-%Importation(datafile=C:\Users\aahmatsouley\OneDrive - Université Paris 1 Panthéon-Sorbonne\Documents\semestre 1\économétrie appliquée\memoire\GDAXI.xlsx, name=DAX); /* We load DAX sheet */
-%Importation(datafile=C:\Users\aahmatsouley\OneDrive - Université Paris 1 Panthéon-Sorbonne\Documents\semestre 1\économétrie appliquée\memoire\SSMI.xlsx, name=SMI); /* We load SMI sheet */
-%Importation(datafile=C:\Users\aahmatsouley\OneDrive - Université Paris 1 Panthéon-Sorbonne\Documents\semestre 1\économétrie appliquée\memoire\FTSE.xlsx, name=FTSE100); /* We load FTSE100 sheet */
-%Importation(datafile=C:\Users\aahmatsouley\OneDrive - Université Paris 1 Panthéon-Sorbonne\Documents\semestre 1\économétrie appliquée\memoire\IBEX.xlsx, name=IBEX35); /* We load IBEX35 sheet */
-%Importation(datafile=C:\Users\aahmatsouley\OneDrive - Université Paris 1 Panthéon-Sorbonne\Documents\semestre 1\économétrie appliquée\memoire\MDAXI.xlsx, name=MDAXI); /* We load IBEX35 sheet */
+%let path = C:\Users\roman\Downloads\VaR_Memoire_S2\Data;
+
+%Importation(datafile=&path.\cac40.xlsx, name=CAC40); /* We load CAC40 sheet */
+%Importation(datafile=&path.\DataGDAXI.xlsx, name=DAX); /* We load DAX sheet */
+%Importation(datafile=&path.\SSMI.xlsx, name=SMI); /* We load SMI sheet */
+%Importation(datafile=&path.\FTSE.xlsx, name=FTSE100); /* We load FTSE100 sheet */
+%Importation(datafile=&path.\IBEX.xlsx, name=IBEX35); /* We load IBEX35 sheet */
+%Importation(datafile=&path.\MDAXI.xlsx, name=MDAXI); /* We load IBEX35 sheet */
 
 %macro Sorting(dataset=, variables=);
 	proc sort data=&dataset.;
